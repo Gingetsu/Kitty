@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @kitty.title %>
+</p>
+
+<%= link_to 'Edit', edit_kitty_path(@kitty) %> |
+<%= link_to 'Back', kitties_path %>
