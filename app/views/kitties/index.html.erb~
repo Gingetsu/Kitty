@@ -1,29 +1,28 @@
 <html>
 
  <%suckr = ImageSuckr::GoogleSuckr.new%>
-
- <h1 class="forexample">
+ <%r = Random.new%>
+ <%array = ["cat", "kitty", "kitten", "cats","кот","коты","котята","котенок","кошка","кошки","котэ"][r.rand(3)]%>
   <center>
-   <p style="color:yellow; font-weight:bold; font-style: italic; font-size: 36px">Kitty
-   </p>
+   <h1 style="color:#ACEACD; font-weight:bold; font-style: italic; font-size: 36px; font-family:Georgia">Kitty=3
+   </h1>
   </center>
- </h1>
 
  <head>
   <style type="text/css">
    body {background-color:#000000}
-   img.primer {width:450px; height:397px; padding: 10px; background:#eeeeee; border:1px solid #cccccc}
+   img.primer {width:450px; height:397px; padding: 10px; background:#ACEACD; border:1px solid #cccccc}
   </style>
  </head>
 
 <body>
  <p>
   <center>
-   <img src="<%= suckr.get_image_url({"q" => "cat, kitty, kitten"}) %>" class="primer" />
+   <img src= <%= suckr.get_image_url({ "q" => array}) %> class="primer" />
   </center>
  </p>
 </body>
- <center><%= button_to "Cat Generator" ,'kitties',:class=>"button", :method=>:get %>
+ <center><%= button_to "Meow!=3" ,'kitties',:class=>"button", :method=>:get %>
  </center>
 </html>
 

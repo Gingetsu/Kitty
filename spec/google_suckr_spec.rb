@@ -11,14 +11,14 @@ expect(image.default_params[:rsz]).to be_eql("8")
 expect(image.default_params[:v]).to be_eql("1.0")
 end
 it "should provide access to override default params" do
-params = {:rsz => "6", :v => "1.1", :as_filetype => "png","jpeg"}
+params = {:rsz => "6", :v => "1.1", :as_filetype => "png"}
 image = ImageSuckr::GoogleSuckr.new
 expect(image.default_params[:rsz]).to be_eql "8"
 image.default_params = params
 expect(image.default_params[:rsz]).to be_eql "6"
 end
 it "should override the default values" do
-params = {:rsz => "6", :v => "1.1", :as_filetype => "png","jpeg"}
+params = {:rsz => "6", :v => "1.1", :as_filetype => "png"}
 image = ImageSuckr::GoogleSuckr.new(params)
 expect(image.default_params[:v]).to be_eql params[:v]
 expect(image.default_params[:rsz]).to be_eql params[:rsz]
